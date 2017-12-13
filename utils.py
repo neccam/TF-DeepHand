@@ -1,9 +1,12 @@
 import cv2
 import numpy as np
+import platform
 
 __all__ = ["read_image", "preprocess_image", "read_eval_image_list", "read_image_list"]
 
 def read_image(image_path):
+    if platform.system() == 'Windows':
+        image_path.replace('*','_');
     img = cv2.imread(image_path);
     return img
 
