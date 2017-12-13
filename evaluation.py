@@ -6,14 +6,20 @@ import numpy as np
 import tensorflow as tf
 import utils
 import time
-
-from deephand import DeepHand
+import sys
+import platform
 
 # Define Code and Data Path
 # code_path: where the classify.py resides
 # data_path: where the images folder of eval set resides
 code_path = '<ABSOLUTE_PATH_OF_THE_CODE>'
 data_path = '<ABSOLUTE_PATH_OF_THE_DATA>'
+
+# For Windows
+if platform.system() == 'Windows':
+    sys.path.append(code_path+'deephand')
+    
+from deephand import DeepHand
 
 # Define Batch Size
 batch_size = 8;
