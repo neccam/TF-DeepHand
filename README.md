@@ -4,6 +4,10 @@ This is a TensorFlow implementation of Koller et al.'s ["Deep Hand: How to Train
 
 The pretrained caffe model is converted using ethereon's [Caffe to Tensorflow](https://github.com/ethereon/caffe-tensorflow) tool.
 
+Tested with:
+
+* Windows 10   - TensorFlow 1.4.0 - GTX 960M
+* Ubuntu 14.04 - TensorFlow 1.2.1 - Titan X
 ## Evaluation
 To evaluate the model on [One-Million-Hands](https://www-i6.informatik.rwth-aachen.de/~koller/1miohands-data/) dataset's test set:
 
