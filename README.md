@@ -6,8 +6,8 @@ The pretrained caffe model is converted using ethereon's [Caffe to Tensorflow](h
 
 Tested with:
 
-* Windows 10   - TensorFlow 1.4.0 - GTX 960M
-* Ubuntu 14.04 - TensorFlow 1.2.1 - Titan X
+* Windows 10   - TensorFlow 1.4.0 - Python 3.5 - GTX 960M
+* Ubuntu 14.04 - TensorFlow 1.2.1 - Python 2.7 - Titan X
 ## Evaluation
 To evaluate the model on [One-Million-Hands](https://www-i6.informatik.rwth-aachen.de/~koller/1miohands-data/) dataset's test set:
 
