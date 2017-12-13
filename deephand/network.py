@@ -63,7 +63,7 @@ class Network(object):
                 if sys.version_info[0] < 3:
                     x = data_dict[op_name].iteritems()
                 else:
-                    x = data_dict[op_name].iter()
+                    x = data_dict[op_name].items()
                 for param_name, data in x:
                     try:
                         var = tf.get_variable(param_name)
