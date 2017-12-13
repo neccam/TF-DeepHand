@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+import sys
 
 DEFAULT_PADDING = 'SAME'
 
@@ -56,10 +57,14 @@ class Network(object):
         session: The current TensorFlow session
         ignore_missing: If true, serialized weights for missing layers are ignored.
         '''
-        data_dict = np.load(data_path).item()
+        data_dict = np.load(data_path, encoding='latin1').item()
         for op_name in data_dict:
             with tf.variable_scope(op_name, reuse=True):
-                for param_name, data in data_dict[op_name].iteritems():
+                if sys.version_info[0] < 3:
+                    x = data_dict[op_name].iteritems()
+                else:
+                    x = data_dict[op_name].iter()
+                for param_name, data in x:
                     try:
                         var = tf.get_variable(param_name)
                         session.run(var.assign(data))
