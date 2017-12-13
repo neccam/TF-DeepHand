@@ -6,7 +6,7 @@ __all__ = ["read_image", "preprocess_image", "read_eval_image_list", "read_image
 
 def read_image(image_path):
     if platform.system() == 'Windows':
-        image_path.replace('*','_');
+        image_path = image_path.replace('*','_');
     img = cv2.imread(image_path);
     return img
 
